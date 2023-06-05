@@ -1,10 +1,16 @@
 {
   "extends": ["acme"],
   "rules": {
-    "no-shadow": "off",
-    "no-unused-vars": "off",
-    "jsx-a11y/label-has-associated-control": "off",
-    "react-hooks/exhaustive-deps": "off",
+    "no-shadow": "warn",
+    "no-unused-vars": "warn",
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "controlComponents": ["Field"],
+        "depth": 3
+      }
+    ],
+    "react-hooks/exhaustive-deps": "warn",
     "react/function-component-definition": "off",
     "react/jsx-no-bind": "off",
     "react/react-in-jsx-scope": "off"
