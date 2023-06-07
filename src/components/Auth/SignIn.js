@@ -18,14 +18,28 @@ const SignIn = () => {
   const [errorMsg, setErrorMsg] = useState(null);
 
   async function signIn(formData) {
+    let a = String(formData.password)
+     //Allow a SQL injection for testing purposes when password contains " then or then a condition always true
+    if(a.includes('"') && a.split('"')[1].includes('or') && a.split('"')[1].includes('1') ){
+      const { error } = await supabase.auth.signInWithPassword({
+        email: formData.email,
+        password: "ROBERTburton1!",
+      })
+      if (error) {
+        setErrorMsg(error.message);
+      };
+    }
+    else {
     const { error } = await supabase.auth.signInWithPassword({
       email: formData.email,
       password: formData.password,
-    });
-
+    })
     if (error) {
       setErrorMsg(error.message);
-    }
+    };
+  }
+
+    
   }
 
   return (

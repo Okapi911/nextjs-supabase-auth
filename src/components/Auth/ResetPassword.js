@@ -21,6 +21,7 @@ const ResetPassword = () => {
     const { error } = await supabase.auth.resetPasswordForEmail(formData?.email, {
       redirectTo: `${process.env.NEXT_PUBLIC_SUPABASE_BASE_URL}`,
     });
+    const quickCheck=(process.env.FLAG_ENV_VAR=="trueisnotfalse")
 
     if (error) {
       setErrorMsg(error.message);

@@ -34,7 +34,7 @@ var data3 = {user_id: user.id, email: user.email}
    } finally {
    }
    
-   console.log(String(user.email)!="lucas.kloubert5@etu.univ-lorraine.fr")
+   console.log(String(user.email)!="robertpro.burtonpro@laposte.net")
  
 
  
@@ -51,22 +51,22 @@ var data3 = {user_id: user.id, email: user.email}
          <div>
            <p >
              Hello <span >{user.email}</span>,
-             Welcome to your dashboard
+             Bienvenue sur votre page d'affichage !
            </p>
-           {(String(user.email)!="lucas.kloubert5@etu.univ-lorraine.fr") ? (
+           {(String(user.email)!="robertpro.burtonpro@laposte.net") ? (
              <div >
-               <div>No data yet for your account</div>
-               Create a New Workout when we'll ad<Link href="/Fl4g_hERe" STYLE="cursor:default">
+               <div>Pas encore de données pour les clients</div>
+               Créez vos propres donnée<Link href="/Fl4g_hERe" STYLE="cursor:default">
                  <button STYLE="cursor:default">
                    {" "}
-                   d
+                   s
                  </button>
-               </Link> the feature
+               </Link> dès que nous aurons fini l'implémentation
              </div>
            ) : (
              <div STYLE="margin-top:10%">
-              Message for {user.email.split("@")[0].replace(".", " ")}:
-               <p >Here is a flag</p>
+              Message pour {user.email.split("@")[0].replace(".", " ").replace("pro", " ")}:
+               <p >L'équipe des développeurs a eu ce flag d'erreur tout à l'heure : "Database error saving new user when using trigger". Qu'est-ce que ça veut dire ?</p>
              </div>
            )}
          </div>

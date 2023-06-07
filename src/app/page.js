@@ -19,13 +19,15 @@ export default function Home() {
   if (user) {
     return (
       <div className="card">
-        <h2>Welcome!</h2>
+        <h2>Bienvenue sur Targetsys !</h2>
+        <div width="20%">Notre plateforme est en développement, mais vous pouvez tester les dernières fonctionnalités dès qu'elles sont ajoutées !</div>
+        <div>Nous proposons déjà un service de databse et d'authentification complet avec supabase !</div>
         <code className="highlight">{user.role}</code>
         <Link className="button" href="/profile">
-          Go to Profile
+          Voir mon profil
         </Link>
         <button type="button" className="button-inverse" onClick={signOut}>
-          Sign Out
+          Me déconnecter
         </button>
       </div>
     );
